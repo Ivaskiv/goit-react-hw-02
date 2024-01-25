@@ -1,0 +1,27 @@
+.buttonOptions {
+  all: unset;
+  text-decoration: none;
+  outline: none;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  color: azure;
+  background-color: rgb(118, 120, 119);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+a:hover,
+button:hover {
+  border-color: red;
+}
+.buttonOptions:hover {
+  background-color: rgb(71, 182, 126);
+  transition: all 250ms rgb(42, 67, 11);
+}
+button:focus,
+button:focus-visible {
+  outline: 6px auto rgb(4, 84, 51);
+}
