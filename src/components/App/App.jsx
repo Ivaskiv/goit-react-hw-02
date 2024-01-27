@@ -42,7 +42,6 @@ export default function App() {
     <div>
       <Description />
 
-
       <Options>
             <OptionButton onClick={() => updateCount('good')} option="good">
               Good
@@ -57,7 +56,6 @@ export default function App() {
               <OptionButton onClick={reset}>Reset</OptionButton>
             )}
       </Options>
-
 
       <Notification
         message={total === 0 ? 'No feedback yet.' : null}

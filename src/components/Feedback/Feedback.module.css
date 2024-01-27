@@ -1,9 +1,10 @@
 .feedbackList {
-  margin-top: 10px;
+  margin: 10px auto;
+  padding: 0;
   text-align: left;
   list-style-type: none;
 }
 .feedbackItem {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
