@@ -36,29 +36,41 @@ export default function App() {
 
   const { good, neutral, bad } = feedback;
   const total = good + neutral + bad;
-  const positive = total > 0 ? Math.round((good / total) * 100) + '%' : '0%';
+  const positivePercentage = total > 0 ? Math.round((good / total) * 100) + '%' : '0%';
 
   return (
     <div>
       <Description />
+
+
       <Options>
-        <OptionButton onClick={updateCount} option="good">
-          Good
-        </OptionButton>
-        <OptionButton onClick={updateCount} option="neutral">
-          Neutral
-        </OptionButton>
-        <OptionButton onClick={updateCount} option="bad">
-          Bad
-        </OptionButton>
-        {total === 0 && <Notification message="No feedback yet." />}
-        {total > 0 && (
-          <>
-            <OptionButton onClick={reset}>Reset</OptionButton>
-            <Feedback good={good} neutral={neutral} bad={bad} total={total} positive={positive} />
-          </>
-        )}
+            <OptionButton onClick={() => updateCount('good')} option="good">
+              Good
+            </OptionButton>
+            <OptionButton onClick={() => updateCount('neutral')} option="neutral">
+              Neutral
+            </OptionButton>
+            <OptionButton onClick={() => updateCount('bad')} option="bad">
+              Bad
+            </OptionButton>
+            {total > 0 && (
+              <OptionButton onClick={reset}>Reset</OptionButton>
+            )}
       </Options>
+
+
+      <Notification
+        message={total === 0 ? 'No feedback yet.' : null}
+      />
+      {total > 0 && (
+        <Feedback
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={total}
+          positivePercentage={positivePercentage}
+        />
+      )}
     </div>
   );
 }
